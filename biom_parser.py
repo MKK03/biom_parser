@@ -144,7 +144,8 @@ def collector():
 # Функция array_of_files(str) получает в качестве аргумента расширение имен файлов, а возвращает
 #  список имен файлов с этим расширением  из папки ~/data 
 
-MAIN_DIRECTORY = "C:\\Users\\mikha\\Desktop\\files_w_ssu_rRNA_data\\"
+#Путь к основной директории
+MAIN_DIRECTORY = ""
 
 def array_of_files(ext_str):
     dir_name = MAIN_DIRECTORY + ext_str + "\\"
@@ -234,7 +235,8 @@ if __name__ == "__main__":
 # Вывод результата обработки в файл
     #это необходимо для больших таксональных единиц, например sk__
     sleep(20)
-    with open("C:\\Users\\mikha\\Desktop\\files_w_ssu_rRNA_data" +'\\taxon.csv', 'w', newline='') as csvfile:
+    #Путь к .csv файлу, куда будут записаны данные
+    with open(MAIN_DIRECTORY +'\\taxon.csv', 'w', newline='') as csvfile:
 
         writer = csv.writer(csvfile, quoting=csv.QUOTE_NONNUMERIC)
         writer.writerow(["Taxon", "Average_SSU_rRNA", "Total_number"])
